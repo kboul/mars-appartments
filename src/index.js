@@ -7,7 +7,7 @@ import './index.sass';
 
 import 'bootstrap/dist/js/bootstrap.js';
 
-import App from './App';
+import App from './components/App/App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(

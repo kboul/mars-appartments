@@ -1,4 +1,5 @@
 import http from '../services/httpService';
+import jwtDecode from 'jwt-decode';
 
 const apiEndpoint = '/auth/login';
 const tokenKey = 'token';
@@ -14,6 +15,16 @@ export async function login(email, password) {
     localStorage.setItem(tokenKey, data.token.accessToken);
 }
 
+export function getCurrentUser() {
+    const jwt = localStorage.getItem(tokenKey);
+
+    // if jwt is null stop => anonymous user
+    if (!jwt) return null;
+
+    return jwtDecode(jwt);	
+}
+
 export default {
-    login
+    login,
+    getCurrentUser
 }
