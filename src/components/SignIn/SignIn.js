@@ -1,7 +1,7 @@
 import React from 'react';
 import Joi from 'joi-browser';
-import Form from '../common/Form';
-import authService from '../services/authService';
+import Form from '../../common/Form';
+import authService from '../../services/authService';
 
 import './SignIn.sass';
 
@@ -31,8 +31,8 @@ class SignIn extends Form {
             const { data } = this.state;
             await authService.login(data.email, data.password);
 
-            // const { state } = this.props.location;
-            // window.location = state ? state.from.pathname : '/';
+            this.props.location.push('/browse');
+           
         } catch (ex) {
             if (ex.response && ex.response.status === 400) {
                 const errors = {...this.state.errors};
