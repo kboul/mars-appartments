@@ -16,9 +16,13 @@ class SignIn extends Form {
 
     schema = {
         email: Joi
-            .string()
+            .string() 
             .email({ minDomainAtoms: 2 })
+            .min(2)
+            .max(11)
             .required()
+            .regex(/(?:(?:19|20)[0-9]{2})/, 'year of birth in 4 digits') // year pattern
+            .regex(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/, '2 letter country code') // country code pattern
             .label("Colonist ID"),
         password: Joi
             .string()
@@ -35,7 +39,7 @@ class SignIn extends Form {
         } catch (ex) {
             if (ex.response && ex.response.status === 400) {
                 const errors = {...this.state.errors};
-                errors.username = ex.response.data;
+                errors.email = ex.response.data;
                 this.setState({ errors });
             }
         }
