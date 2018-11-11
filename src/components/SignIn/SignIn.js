@@ -2,6 +2,7 @@ import React from 'react';
 import Joi from 'joi-browser';
 import Form from '../../common/Form';
 import authService from '../../services/authService';
+import MarsCircleHeader from '../MarsCircleHeader/MarsCircleHeader';
 
 import './SignIn.sass';
 
@@ -55,7 +56,9 @@ class SignIn extends Form {
                     <div className="card rounded-0">
                         <div className="card-body">
                             <div className="mb-4">
-                                <b>Blueground on Mars</b>
+                                <MarsCircleHeader
+                                    background="black" 
+                                    color="white" />
                             </div>
                             {this.renderInput("email", "Colonist ID")}
                             {this.renderInput("password", "Password")}
