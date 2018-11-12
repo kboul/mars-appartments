@@ -11,6 +11,7 @@ class App extends Component {
 	render() {
 		return (
 			<Switch>
+				<ProtectedRoute path="/browse/:id" component={Browse} />
 				<ProtectedRoute path="/browse" component={Browse} />
 				<Route path="/signin" component={SignIn} />
 				<Redirect from="/" exact to="/signin" />

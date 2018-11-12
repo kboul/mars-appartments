@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import ReactStars from 'react-stars';
+import { withRouter } from 'react-router-dom'
 
 import { getUnits } from '../../services/unitsService';
 import MarsCircleHeader from '../MarsCircleHeader/MarsCircleHeader';
 import ModalComp from '../ModalComp/ModalComp';
+import ModalContent from '../ModalContent/ModalContent';
 
 const cardStyle = { border: '0px' };
 const cardBodyStyle = { padding: '0' };
 const clickableCard = { cursor: 'pointer' };
+
 
 class Browse extends Component {
     state = {
@@ -27,6 +30,15 @@ class Browse extends Component {
         });
     }
 
+    addIdToUrl = (id) => {
+        this.props.history.push(`/browse/${id}`);
+    }
+
+    handleClick = (id) => {
+        this.toggle();
+        this.addIdToUrl(id);
+    }
+
     render() { 
         return ( 
             <div className="container-fluid">
@@ -44,14 +56,14 @@ class Browse extends Component {
                     <ModalComp
                         modal={this.state.modal} 
                         toggle={this.toggle}>
-                        More Data    
+                       <ModalContent />   
                     </ModalComp>  
                     {this.state.units.map(({id, name, region, description, cancellation, price, rating}) => {
                         return (
                             <div 
                                 className="col-md-4" 
                                 key={id}
-                                onClick={this.toggle}
+                                onClick={() => this.handleClick(id)}
                                 style={clickableCard}>   
                                 <div 
                                     className="card mb-4 box-shadow" 
@@ -77,8 +89,7 @@ class Browse extends Component {
                                             color2={'#000000'} />
                                         <div className="card-text">
                                             <b>{(price / 5600).toFixed(2)} BTC</b>
-                                        </div>    
-                                               
+                                        </div>      
                                     </div>
                                 </div>
                             </div>
@@ -90,4 +101,4 @@ class Browse extends Component {
     }
 }
  
-export default Browse;
+export default withRouter(Browse);
