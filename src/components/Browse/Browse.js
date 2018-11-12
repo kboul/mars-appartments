@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import ReactStars from 'react-stars';
+
 import { getUnits } from '../../services/unitsService';
 import MarsCircleHeader from '../MarsCircleHeader/MarsCircleHeader';
 
@@ -30,7 +32,7 @@ class Browse extends Component {
                     </div>
                 </div>
                 <div className="card-deck d-flex justify-content-center mt-4">
-                    {this.state.units.map(({id, name, description, cancellation, price}) => {
+                    {this.state.units.map(({id, name, description, cancellation, price, rating}) => {
                         return (
                             <div key={id}>
                                 <div 
@@ -51,6 +53,12 @@ class Browse extends Component {
                                         <div className="card-text">
                                             <b>{(price / 5600).toFixed(2)} BTC</b>
                                         </div>
+                                        <ReactStars
+                                            count={5}
+                                            value={rating}
+                                            size={24}
+                                            color1={'#DCDCDC'}
+                                            color2={'#000000'} />
                                     </div>
                                 </div>
                             </div>
