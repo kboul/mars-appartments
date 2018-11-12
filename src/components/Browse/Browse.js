@@ -4,7 +4,7 @@ import ReactStars from 'react-stars';
 import { getUnits } from '../../services/unitsService';
 import MarsCircleHeader from '../MarsCircleHeader/MarsCircleHeader';
 
-const cardStyle = { width: '30rem', border: '0px' };
+const cardStyle = { border: '0px' };
 const cardBodyStyle = { padding: '0' };
 
 class Browse extends Component {
@@ -35,20 +35,22 @@ class Browse extends Component {
                     {this.state.units.map(({id, name, region, description, cancellation, price, rating}) => {
                         return (
                             <div 
-                                key={id} 
-                                className="col-md-4">
+                                className="col-md-4" 
+                                key={id}>
                                 <div 
                                     className="card mb-4 box-shadow" 
                                     style={cardStyle}>
                                     <img 
                                         className="card-img-top" 
-                                        src="https://via.placeholder.com/362x180"
-                                        alt="https://via.placeholder.com/362x180" />
-                                    <div className="card-body" style={cardBodyStyle}>
+                                        src="https://via.placeholder.com/362x180" 
+                                        alt="https://via.placeholder.com/362x180"/>
+                                    <div 
+                                        className="card-body" 
+                                        style={cardBodyStyle}>
                                         <b>{name}</b> 
                                         <div>{region}</div>
                                         <div className="card-text">
-                                            {`${description.substring(0,60)}...`}
+                                             {`${description.substring(0,60)}...`}
                                         </div>
                                         <div>{cancellation}</div> 
                                         <ReactStars
@@ -59,10 +61,10 @@ class Browse extends Component {
                                             color2={'#000000'} />
                                         <div className="card-text">
                                             <b>{(price / 5600).toFixed(2)} BTC</b>
-                                        </div>                                                
+                                        </div>                
                                     </div>
                                 </div>
-                            </div>      
+                            </div>
                         )
                     })}
                 </div>
