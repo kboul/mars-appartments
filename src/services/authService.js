@@ -21,7 +21,21 @@ export function isUserLoggedIn() {
     return jwtDecode(jwt);	
 }
 
+export function getJwt() {
+    return localStorage.getItem(tokenKey);
+}
+
+export function getHeaders() {
+    return { 
+        headers: { 
+            'Authorization': `bearer ${getJwt()}` 
+        } 
+    }
+}
+
 export default {
     login,
-    isUserLoggedIn
+    isUserLoggedIn,
+    getJwt,
+    getHeaders
 }
