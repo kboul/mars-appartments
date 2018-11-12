@@ -31,7 +31,7 @@ class Browse extends Component {
     }
 
     addIdToUrl = (id) => {
-        this.props.history.push(`/browse/${id}`);
+        this.props.history.push(`/units/${id}`);
     }
 
     handleClick = (id) => {

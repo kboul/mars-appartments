@@ -36,7 +36,7 @@ class SignIn extends Form {
             const { data } = this.state;
             await authService.login(data.email, data.password);
             // land to browse view if successful
-            this.props.history.push('/browse');
+            this.props.history.push('/units');
         } catch (ex) {
             if (ex.response && ex.response.status === 400) {
                 const errors = {...this.state.errors};
