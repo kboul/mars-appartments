@@ -32,7 +32,7 @@ class Browse extends Component {
                     </div>
                 </div>
                 <div className="card-deck d-flex justify-content-center mt-4">
-                    {this.state.units.map(({id, name, description, cancellation, price, rating}) => {
+                    {this.state.units.map(({id, name, region, description, cancellation, price, rating}) => {
                         return (
                             <div key={id}>
                                 <div 
@@ -46,19 +46,20 @@ class Browse extends Component {
                                         className="card-body" 
                                         style={cardBodyStyle}>
                                         <b>{name}</b> 
+                                        <div>{region}</div>
                                         <div className="card-text">
                                             {`${description.substring(0,60)}...`}
                                         </div>
                                         <div>{cancellation}</div> 
-                                        <div className="card-text">
-                                            <b>{(price / 5600).toFixed(2)} BTC</b>
-                                        </div>
                                         <ReactStars
                                             count={5}
                                             value={rating}
                                             size={24}
                                             color1={'#DCDCDC'}
                                             color2={'#000000'} />
+                                        <div className="card-text">
+                                            <b>{(price / 5600).toFixed(2)} BTC</b>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
