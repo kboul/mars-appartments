@@ -47,7 +47,7 @@ class Browse extends Component {
                                         style={cardBodyStyle}>
                                         <b>{name}</b> 
                                         <div className="card-text">
-                                            {description.substring(0,30)}
+                                            {`${description.substring(0,60)}...`}
                                         </div>
                                         <div>{cancellation}</div> 
                                         <div className="card-text">
