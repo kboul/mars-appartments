@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 
 import { getUnits } from '../../services/unitsService';
+import { euro2Bitcoin } from '../utils/euro2Bitcoin';
+
 import MarsCircleHeader from '../MarsCircleHeader/MarsCircleHeader';
 import ModalComp from '../ModalComp/ModalComp';
 import ModalContent from '../ModalContent/ModalContent';
@@ -84,7 +86,8 @@ class Browse extends Component {
                                         <div>{cancellation}</div> 
                                         <Rating stars={rating} />
                                         <div className="card-text">
-                                            <b>{(price / 5600).toFixed(2)} BTC</b>
+                                            {/* <b>{(price / 5600).toFixed(2)} BTC</b> */}
+                                            <b> {euro2Bitcoin(price)}</b>
                                         </div>      
                                     </div>
                                 </div>
