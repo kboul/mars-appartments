@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import Joi from 'joi-browser';
 import Form from '../../common/Form';
 import authService from '../../services/authService';
@@ -47,6 +48,9 @@ class SignIn extends Form {
     }
 
     render() { 
+        // if user is logged in & tries to hit / on browser redirect him to /units
+        if (authService.isUserLoggedIn()) return <Redirect to="/units" />;
+
         return ( 
             <div className="container authenticate-container">
                 <form 
