@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import ReactStars from 'react-stars';
 import { withRouter } from 'react-router-dom'
 
 import { getUnits } from '../../services/unitsService';
 import MarsCircleHeader from '../MarsCircleHeader/MarsCircleHeader';
 import ModalComp from '../ModalComp/ModalComp';
 import ModalContent from '../ModalContent/ModalContent';
+import Rating from '../Rating/Rating';
 
 const cardStyle = { border: '0px' };
 const cardBodyStyle = { padding: '0' };
@@ -81,12 +81,7 @@ class Browse extends Component {
                                             {`${description.substring(0,60)}...`}
                                         </div>
                                         <div>{cancellation}</div> 
-                                        <ReactStars
-                                            count={5}
-                                            value={rating}
-                                            size={24}
-                                            color1={'#DCDCDC'}
-                                            color2={'#000000'} />
+                                        <Rating stars={rating} />
                                         <div className="card-text">
                                             <b>{(price / 5600).toFixed(2)} BTC</b>
                                         </div>      
