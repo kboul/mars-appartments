@@ -40,6 +40,7 @@ class Browse extends Component {
     }
 
     render() { 
+        const { modal, units } = this.state;
         return ( 
             <div className="container-fluid">
                 <div className="d-flex justify-content-between m-2">
@@ -54,11 +55,11 @@ class Browse extends Component {
                 </div>
                 <div className="row mt-4">
                     <ModalComp
-                        modal={this.state.modal} 
+                        modal={modal} 
                         toggle={this.toggle}>
                        <ModalContent />   
                     </ModalComp>  
-                    {this.state.units.map(({id, name, region, description, cancellation, price, rating}) => {
+                    {units.map(({id, name, region, description, cancellation, price, rating}) => {
                         return (
                             <div 
                                 className="col-md-4" 
