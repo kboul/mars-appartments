@@ -30,6 +30,10 @@ class ModalContent extends Component {
         console.log(this.state.unit);
     }
 
+    createMarkup(html) {
+        return {__html: `<i>Description</i>: ${html}`};
+    }
+
     render() { 
         const { unit, amenities, availability } = this.state;
 
@@ -58,7 +62,7 @@ class ModalContent extends Component {
                 <Rating stars={unit.rating} />
 
                 <div className="mt-2 mb-4">
-                   <i>Description</i>: {unit.description}
+                   <div dangerouslySetInnerHTML={this.createMarkup(unit.description)} />
                 </div>
 
                 <div className="mb-4">
