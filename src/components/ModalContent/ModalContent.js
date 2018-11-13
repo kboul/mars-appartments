@@ -41,7 +41,7 @@ class ModalContent extends Component {
                     Image
                 </div>
                 
-                <div className="mt-2 mb-2 d-flex justify-content-between">
+                <div className="mt-2 d-flex justify-content-between">
                     <div>
                         <b> {unit.name} - {unit.region}</b>
                     </div> 
@@ -58,7 +58,7 @@ class ModalContent extends Component {
                 <Rating stars={unit.rating} />
 
                 <div className="mt-2 mb-4">
-                    Description: {unit.description}
+                   <i>Description</i>: {unit.description}
                 </div>
 
                 <div className="mb-4">
