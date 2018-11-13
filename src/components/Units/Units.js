@@ -50,8 +50,10 @@ class Units extends Component {
 
     render() { 
         const { searchQuery, modal, units } = this.state;
-        const filteredUnits = units.filter(unit => unit.name.toLowerCase().includes(searchQuery));
-        console.log(filteredUnits);
+        const filteredUnits = units.filter(unit => 
+            unit.name.toLowerCase().includes(searchQuery) || 
+            unit.region.toLowerCase().includes(searchQuery)
+        );
 
         return ( 
             <div className="container-fluid">
