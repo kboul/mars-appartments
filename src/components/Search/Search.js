@@ -5,9 +5,11 @@ const itemsStyle = {
     paddingLeft: '10px'
 }
 
+const searchBarStyle = { marginLeft: '-14px' }
+
 const Search = ({value, onSearch, itemsDisplayed}) => {
     return (
-        <div className="input-group col-md-4 mb-4">
+        <div className="input-group col-md-4 mb-4" style={searchBarStyle}>
             <div className="input-group-prepend">
                 <span className="input-group-text fa fa-search py-2"></span>
             </div>
