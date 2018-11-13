@@ -70,7 +70,8 @@ class Units extends Component {
 
                 <Search 
                     value={searchQuery} 
-                    onSearch={this.handleSearch} />
+                    onSearch={this.handleSearch}
+                    itemsDisplayed={filteredUnits.length} />
 
                 <div className="row mt-2">
                     <ModalComp

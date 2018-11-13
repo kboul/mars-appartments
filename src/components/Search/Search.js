@@ -1,6 +1,11 @@
 import React from 'react';
 
-const Search = ({value, onSearch}) => {
+const itemsStyle = {
+    paddingTop: '10px',
+    paddingLeft: '10px'
+}
+
+const Search = ({value, onSearch, itemsDisplayed}) => {
     return (
         <div className="input-group col-md-4 mb-4">
             <div className="input-group-prepend">
@@ -12,6 +17,9 @@ const Search = ({value, onSearch}) => {
                 className="form-control" 
                 placeholder="Search..." 
                 onChange={onSearch} />
+            <div style={itemsStyle}>
+                {`${itemsDisplayed} items`}
+            </div>
         </div>
     );
 }
