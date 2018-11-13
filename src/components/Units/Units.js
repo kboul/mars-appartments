@@ -14,7 +14,7 @@ const cardBodyStyle = { padding: '0' };
 const clickableCard = { cursor: 'pointer' };
 
 
-class Browse extends Component {
+class Units extends Component {
     state = {
         units: [],
         modal: false
@@ -100,4 +100,4 @@ class Browse extends Component {
     }
 }
  
-export default withRouter(Browse);
+export default withRouter(Units);
