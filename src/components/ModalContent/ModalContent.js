@@ -54,7 +54,7 @@ class ModalContent extends Component {
                             type="button" 
                             className="btn btn-secondary special-btn"
                             style={{width: '100px', ...buttonsStyle}}>
-                            {euro2Bitcoin(unit.price)}
+                            <b>{euro2Bitcoin(unit.price)}</b>
                         </button>
                     </div>
                 </div>
