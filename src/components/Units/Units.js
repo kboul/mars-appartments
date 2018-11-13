@@ -8,6 +8,7 @@ import MarsCircleHeader from '../MarsCircleHeader/MarsCircleHeader';
 import ModalComp from '../ModalComp/ModalComp';
 import ModalContent from '../ModalContent/ModalContent';
 import Rating from '../Rating/Rating';
+import Search from '../Search/Search';
 
 const cardStyle = { border: '0px' };
 const cardBodyStyle = { padding: '0' };
@@ -17,7 +18,8 @@ const clickableCard = { cursor: 'pointer' };
 class Units extends Component {
     state = {
         units: [],
-        modal: false
+        modal: false,
+        searchQuery: ''
     }
 
     async componentDidMount() {
@@ -41,11 +43,19 @@ class Units extends Component {
         this.addIdToUrl(id);
     }
 
+    handleSearch = ({ currentTarget: input }) => {
+        const searchQuery = input.value;
+        this.setState({ searchQuery });
+    }
+
     render() { 
-        const { modal, units } = this.state;
+        const { searchQuery, modal, units } = this.state;
+        const filteredUnits = units.filter(unit => unit.name.toLowerCase().includes(searchQuery));
+        console.log(filteredUnits);
+
         return ( 
             <div className="container-fluid">
-                <div className="d-flex justify-content-between m-2">
+                <div className="d-flex justify-content-between mt-2 mb-4">
                     <div>
                         <MarsCircleHeader 
                             background="white" 
@@ -55,13 +65,18 @@ class Units extends Component {
                         User name
                     </div>
                 </div>
-                <div className="row mt-4">
+
+                <Search 
+                    value={searchQuery} 
+                    onSearch={this.handleSearch} />
+
+                <div className="row mt-2">
                     <ModalComp
                         modal={modal} 
                         toggle={this.toggle}>
                        <ModalContent />   
                     </ModalComp>  
-                    {units.map(({id, name, region, description, cancellation, price, rating}) => {
+                    {filteredUnits.map(({id, name, region, description, cancellation, price, rating}) => {
                         return (
                             <div 
                                 className="col-md-4" 
