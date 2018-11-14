@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom';
 
 import { getUnits } from '../../services/unitsService';
 import { euro2Bitcoin } from '../utils/euro2Bitcoin';
+import { getUserImg, getUserName } from '../../services/authService';
 
 import MarsCircleHeader from '../MarsCircleHeader/MarsCircleHeader';
 import ModalComp from '../ModalComp/ModalComp';
 import ModalContent from '../ModalContent/ModalContent';
 import Rating from '../Rating/Rating';
 import Search from '../Search/Search';
+import UserAvatar from '../UserAvatar/UserAvatar';
 
 const cardStyle = { border: '0px' };
 const cardBodyStyle = { padding: '0' };
@@ -19,12 +21,16 @@ class Units extends Component {
     state = {
         units: [],
         modal: false,
-        searchQuery: ''
+        searchQuery: '',
+        userImg: '',
+        userName: ''
     }
 
     async componentDidMount() {
         const { data: units } = await getUnits();
-        this.setState({ units: units.data });
+        const userImg = getUserImg();
+        const userName = getUserName();
+        this.setState({ units: units.data, userImg, userName });
         console.log(this.state.units);
     }
 
@@ -49,7 +55,7 @@ class Units extends Component {
     }
 
     render() { 
-        const { searchQuery, modal, units } = this.state;
+        const { userImg, userName, searchQuery, modal, units } = this.state;
         const filteredUnits = units.filter(unit => 
             unit.name.toLowerCase().includes(searchQuery) || 
             unit.region.toLowerCase().includes(searchQuery)
@@ -63,9 +69,9 @@ class Units extends Component {
                             background="white" 
                             color="black" />
                     </div>
-                    <div>
-                        User name
-                    </div>
+                    <UserAvatar 
+                        image={userImg}
+                        name={userName} />
                 </div>
 
                 <Search 
