@@ -20,12 +20,11 @@ class SignIn extends Form {
         email: Joi
             .string() 
             .email({ minDomainAtoms: 2 })
-            .min(2)
-            .max(11)
             .required()
-            .regex(/(?:(?:19|20)[0-9]{2})/, 'year of birth in 4 digits') // year pattern
-            .regex(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/, '2 letter country code') // country code pattern
-            .label("Colonist ID"),
+            .regex(/^[\w-]{2,8}@.*$/, '2-8 min chars before @')
+            .regex(/(?:(?:19|20)[0-9]{2})/, 'year of birth in 4 digits') 
+            .regex(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/, '2 letter country code after .')
+            .label("Email"),
         password: Joi
             .string()
             .required()
@@ -64,7 +63,7 @@ class SignIn extends Form {
                                     background="black" 
                                     color="white" />
                             </div>
-                            {this.renderInput("email", "Colonist ID")}
+                            {this.renderInput("email", "Email")}
                             {this.renderInput("password", "Password")}
                             <div className="float-right">
                                 {this.renderButton("Sign In")}
