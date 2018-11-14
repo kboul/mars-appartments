@@ -3,6 +3,8 @@ import jwtDecode from 'jwt-decode';
 
 const apiEndpoint = '/auth/login';
 const tokenKey = 'token';
+const userImg = 'userImg';
+const userName = 'userName';
 
 export async function login(email, password) {
     const { data } = await http.post(apiEndpoint, {
@@ -10,6 +12,8 @@ export async function login(email, password) {
         password: password
     });
     localStorage.setItem(tokenKey, data.token.accessToken);
+    localStorage.setItem(userName, data.user.name);
+    localStorage.setItem(userImg, data.user.picture);
 } 
 
 export function isUserLoggedIn() {
@@ -33,9 +37,19 @@ export function getHeaders() {
     }
 }
 
+export function getUserImg() {
+    return localStorage.getItem(userImg);
+}
+
+export function getUserName() {
+    return localStorage.getItem(userName);
+}
+
 export default {
     login,
     isUserLoggedIn,
     getJwt,
-    getHeaders
+    getHeaders,
+    getUserImg,
+    getUserName
 }
