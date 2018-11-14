@@ -62,7 +62,9 @@ class ModalContent extends Component {
                 <Rating stars={unit.rating} />
 
                 <div className="mt-2 mb-4">
-                   <div dangerouslySetInnerHTML={this.createMarkup(unit.description)} />
+                   <div 
+                        id="description" 
+                        dangerouslySetInnerHTML={this.createMarkup(unit.description)} />
                 </div>
 
                 <div className="mb-4">
