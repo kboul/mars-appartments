@@ -15,7 +15,8 @@ import UserAvatar from '../UserAvatar/UserAvatar';
 const cardStyle = { border: '0px' };
 const cardBodyStyle = { padding: '0' };
 const clickableCard = { cursor: 'pointer' };
-
+const imgUrlPrefix = process.env.REACT_APP_IMG_URL_PREFIX;
+console.log(imgUrlPrefix);
 
 class Units extends Component {
     state = {
@@ -85,7 +86,7 @@ class Units extends Component {
                         toggle={this.toggle}>
                        <ModalContent />   
                     </ModalComp>  
-                    {filteredUnits.map(({id, name, region, description, cancellation, price, rating}) => {
+                    {filteredUnits.map(({id, pictures, name, region, description, cancellation, price, rating}) => {
                         return (
                             <div 
                                 className="col-md-4" 
@@ -97,8 +98,8 @@ class Units extends Component {
                                     style={cardStyle}>
                                     <img 
                                         className="card-img-top" 
-                                        src="https://via.placeholder.com/362x180" 
-                                        alt="https://via.placeholder.com/362x180"/>
+                                        src={`${imgUrlPrefix}/${pictures[1]}`} 
+                                        alt={`${imgUrlPrefix}/${pictures[1]}`} />
                                     <div 
                                         className="card-body" 
                                         style={cardBodyStyle}>
