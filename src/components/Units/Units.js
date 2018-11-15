@@ -16,7 +16,6 @@ const cardStyle = { border: '0px' };
 const cardBodyStyle = { padding: '0' };
 const clickableCard = { cursor: 'pointer' };
 const imgUrlPrefix = process.env.REACT_APP_IMG_URL_PREFIX;
-console.log(imgUrlPrefix);
 
 class Units extends Component {
     state = {
