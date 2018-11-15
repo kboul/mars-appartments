@@ -7,12 +7,8 @@ import Rating from '../Rating/Rating';
 
 import './ModalContent.sass';
 
-const modalImageStyle = {
-    height: '50vh', 
-    background: 'red'
-}
-
 const buttonsStyle = { cursor: 'none' };
+const imgUrlPrefix = process.env.REACT_APP_IMG_URL_PREFIX;
 
 class ModalContent extends Component {
     state = { 
@@ -27,22 +23,30 @@ class ModalContent extends Component {
         const amenities = unit.amenities;
         const availability = unit.availability;
         this.setState({ unit, amenities, availability });
-        console.log(this.state.unit);
+        // console.log(this.state.unit);
     }
 
     createMarkup(html) {
         return {__html: `<i>Description</i>: ${html}`};
     }
 
+    findBiggestImg(picturesArray) {
+        return picturesArray.find(element => element.includes('w800'));
+    }
+
     render() { 
         const { unit, amenities, availability } = this.state;
-
+    
         return ( 
             <React.Fragment>
                 <div 
-                    className="row" 
-                    style={modalImageStyle}>
-                    Image
+                    className="row"
+                    id="modalImage">
+                    {unit && unit.pictures && 
+                    <img 
+                        src={`${imgUrlPrefix}/${this.findBiggestImg(unit.pictures)}`} 
+                        alt={`${imgUrlPrefix}/${this.findBiggestImg(unit.pictures)}`} />
+                    }
                 </div>
                 
                 <div className="mt-2 d-flex justify-content-between">
