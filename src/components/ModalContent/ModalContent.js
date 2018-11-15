@@ -49,7 +49,9 @@ class ModalContent extends Component {
                     }
                 </div>
                 
-                <div className="mt-2 d-flex justify-content-between">
+                <div 
+                    id="nameRegion" 
+                    className="d-flex justify-content-between">
                     <div>
                         <b> {unit.name} - {unit.region}</b>
                     </div> 
@@ -65,13 +67,12 @@ class ModalContent extends Component {
                 
                 <Rating stars={unit.rating} />
 
-                <div className="mt-2 mb-4">
-                   <div 
-                        id="description" 
-                        dangerouslySetInnerHTML={this.createMarkup(unit.description)} />
-                </div>
-
-                <div className="mb-4">
+                
+                <div 
+                    id="description" 
+                    dangerouslySetInnerHTML={this.createMarkup(unit.description)} />
+                
+                <div id="amenities">
                     <b>Amenities: </b> 
                     {amenities.join(', ')}
                 </div>
