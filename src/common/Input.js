@@ -13,7 +13,7 @@ const Input = ({ name, label, value, error, onChange }) => {
                 }
                 value={value}
                 onChange={onChange}
-                type="text" 
+                type={name=== 'email' ? 'text' : 'password'} 
                 className="form-control" 
                 id={name} 
                 name={name}
