@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'; 
 import './MarsCircleHeader.sass';
 
 const MarsCircleHeader = ({background, color}) => {
@@ -15,5 +16,10 @@ const MarsCircleHeader = ({background, color}) => {
         </b>
     );
 }
+
+MarsCircleHeader.propTypes = {
+    background: PropTypes.string.isRequired,
+    color: PropTypes.string.isRequired
+};
  
 export default MarsCircleHeader;
