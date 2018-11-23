@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types'; 
 
 const itemsStyle = {
     paddingTop: '10px',
     paddingLeft: '10px'
-}
+};
 
-const searchBarStyle = { marginLeft: '-14px' }
+const searchBarStyle = { marginLeft: '-14px' };
 
 const Search = ({value, onSearch, itemsDisplayed}) => {
     return (
@@ -24,6 +25,12 @@ const Search = ({value, onSearch, itemsDisplayed}) => {
             </div>
         </div>
     );
-}
+};
+
+Search.propTypes = {
+    value: PropTypes.string,
+    onSearch: PropTypes.func,
+    itemsDisplayed: PropTypes.number
+};
  
 export default Search;
