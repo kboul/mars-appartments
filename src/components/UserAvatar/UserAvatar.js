@@ -1,8 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types'; 
 
-const mediaBodyStyle = { 
-    paddingTop: '5px'
-};
+const mediaBodyStyle = { paddingTop: '5px' };
 
 const UserAvatar = ({image, name}) => {
     return ( 
@@ -20,6 +19,11 @@ const UserAvatar = ({image, name}) => {
                 </div>
         </div>
      );
-}
+};
+
+UserAvatar.propTypes = {
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+};
  
 export default UserAvatar;
