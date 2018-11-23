@@ -1,5 +1,6 @@
 import React from 'react'
 import { Modal, ModalBody } from 'reactstrap';
+import PropTypes from 'prop-types'; 
 import './ModalComp.sass';
 
 const modalStyle = { 
@@ -21,5 +22,11 @@ const ModalComp = ({modal, toggle, children}) => {
         </Modal>
 	);
 }
+
+ModalComp.propTypes = {
+    modal: PropTypes.bool.isRequired,
+    toggle: PropTypes.func.isRequired,
+    children: PropTypes.object.isRequired
+};
 
 export default ModalComp;
