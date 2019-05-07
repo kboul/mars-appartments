@@ -33,5 +33,14 @@
         "not dead",
         "not ie <= 11",
         "not op_mini all"
-    ]
+    ],
+    "devDependencies": {
+        "braces": "^3.0.2",
+        "enzyme-adapter-react-16": "^1.12.1",
+        "handlebars": "^4.1.2",
+        "jest": "^24.8.0",
+        "js-yaml": "^3.13.1",
+        "tar": "^4.4.8",
+        "webpack-dev-server": "^3.3.1"
+    }
 }
