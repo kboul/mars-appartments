@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-import Rating from '../Rating/Rating'
-import { getUnit } from '../../services/unitService'
-import { euro2Bitcoin } from '../../utils/euro2Bitcoin'
-import './ModalContent.sass'
+import Rating from './Rating'
+import { getUnit } from '../services/unitService'
+import { euro2Bitcoin } from '../utils/euro2Bitcoin'
+import '../sass/ModalContent.sass'
 
 const buttonsStyle = { cursor: 'none' }
 const imgUrlPrefix = process.env.REACT_APP_IMG_URL_PREFIX

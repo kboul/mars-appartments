@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom'
 import Joi from 'joi-browser'
 import Form from '../common/Form'
 import authService from '../services/authService'
-import MarsCircleHeader from './MarsCircleHeader/MarsCircleHeader'
+import MarsCircleHeader from './MarsCircleHeader'
 import '../sass/SignIn.sass'
 
 class SignIn extends Form {
