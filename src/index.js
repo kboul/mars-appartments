@@ -4,11 +4,11 @@ import { BrowserRouter as Router } from "react-router-dom"
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'font-awesome/css/font-awesome.min.css'
-import './index.sass'
+import './sass/index.sass'
 
 import 'bootstrap/dist/js/bootstrap.js'
 
-import App from './components/App/App'
+import App from './components/App'
 import * as serviceWorker from './serviceWorker'
 
 ReactDOM.render(
