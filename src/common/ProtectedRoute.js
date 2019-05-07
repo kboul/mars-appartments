@@ -1,23 +1,23 @@
-import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
-import authService from '../services/authService';
+import React from 'react'
+import { Route, Redirect } from 'react-router-dom'
+import authService from '../services/authService'
 
 const ProtectedRoute = ({ path, component: Component, render, ...rest }) => {
     return (
-        <Route 
+        <Route
             {...rest}
-            render={props => { 
-                if (!authService.isUserLoggedIn()) 
-                    return  (
-                        <Redirect 
+            render={props => {
+                if (!authService.isUserLoggedIn())
+                    return (
+                        <Redirect
                             to={{
                                 pathname: '/signin',
                                 state: { from: props.location }
                             }} />
-                    );
-                return Component ? <Component {...props} /> : render(props);
-            }} />   
-    );
-};
- 
-export default ProtectedRoute;
+                    )
+                return Component ? <Component {...props} /> : render(props)
+            }} />
+    )
+}
+
+export default ProtectedRoute

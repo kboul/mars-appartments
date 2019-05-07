@@ -1,8 +1,8 @@
-import http from '../services/httpService';
-import { getHeaders } from "./authService";
+import http from '../services/httpService'
+import { getHeaders } from "./authService"
 
-const apiEndpoint = '/units';
+const apiEndpoint = '/units'
 
 export function getUnits() {
-    return http.get(apiEndpoint, getHeaders());
+    return http.get(apiEndpoint, getHeaders())
 }
