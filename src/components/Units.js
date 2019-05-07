@@ -1,16 +1,14 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-
-import { getUnits } from '../../services/unitsService'
-import { euro2Bitcoin } from '../../utils/euro2Bitcoin'
-import { getUserImg, getUserName } from '../../services/authService'
-
-import MarsCircleHeader from '../MarsCircleHeader/MarsCircleHeader'
-import ModalComp from '../ModalComp/ModalComp'
-import ModalContent from '../ModalContent/ModalContent'
-import Rating from '../Rating/Rating'
-import Search from '../Search/Search'
-import UserAvatar from '../UserAvatar/UserAvatar'
+import MarsCircleHeader from './MarsCircleHeader/MarsCircleHeader'
+import ModalComp from './ModalComp/ModalComp'
+import ModalContent from './ModalContent/ModalContent'
+import Rating from './Rating/Rating'
+import Search from './Search/Search'
+import UserAvatar from './UserAvatar'
+import { getUnits } from '../services/unitsService'
+import { euro2Bitcoin } from '../utils/euro2Bitcoin'
+import { getUserImg, getUserName } from '../services/authService'
 
 const cardStyle = { border: '0px' }
 const cardBodyStyle = { padding: '0' }
