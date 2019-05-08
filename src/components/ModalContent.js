@@ -5,7 +5,6 @@ import { getUnit } from '../services/unitService'
 import { euro2Bitcoin } from '../utils/euro2Bitcoin'
 import '../sass/ModalContent.sass'
 
-const buttonsStyle = { cursor: 'none' }
 const imgUrlPrefix = process.env.REACT_APP_IMG_URL_PREFIX
 
 class ModalContent extends Component {
@@ -21,7 +20,6 @@ class ModalContent extends Component {
         const amenities = unit.amenities
         const availability = unit.availability
         this.setState({ unit, amenities, availability })
-        // console.log(this.state.unit)
     }
 
     createMarkup(html) {
@@ -57,14 +55,13 @@ class ModalContent extends Component {
                         <button
                             type="button"
                             className="btn btn-secondary special-btn"
-                            style={{ width: '100px', ...buttonsStyle }}>
+                            style={{ width: '100px' }}>
                             <b>{euro2Bitcoin(unit.price)}</b>
                         </button>
                     </div>
                 </div>
 
                 <Rating stars={unit.rating} />
-
 
                 <div
                     id="description"
@@ -82,8 +79,8 @@ class ModalContent extends Component {
                                 className="col-12 col-sm-3 col-md-3"
                                 key={year}>
                                 <button
-                                    style={{ marginBottom: '8px', ...buttonsStyle }}
-                                    className="btn btn-light btn-block special-btn">
+                                    className="btn btn-light btn-block special-btn"
+                                    style={{ marginBottom: '8px' }}>
                                     {year}
                                 </button>
                             </div>
