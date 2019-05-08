@@ -2,6 +2,7 @@
     "name": "mars-app",
     "version": "0.1.0",
     "private": true,
+    "homepage": "https://kboul.github.io/mars-app",
     "dependencies": {
         "axios": "^0.18.0",
         "bootstrap": "^4.3.1",
@@ -23,7 +24,9 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -38,6 +41,7 @@
         "braces": "^3.0.2",
         "enzyme": "^3.9.0",
         "enzyme-adapter-react-16": "^1.12.1",
+        "gh-pages": "^2.0.1",
         "handlebars": "^4.1.2",
         "js-yaml": "^3.13.1",
         "tar": "^4.4.8"
