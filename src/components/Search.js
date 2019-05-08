@@ -1,18 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-const itemsStyle = {
-    paddingTop: '10px',
-    paddingLeft: '10px'
-}
-
-const searchBarStyle = { marginLeft: '-14px' }
+import { items, searchBar } from '../sass/Search.module.sass'
 
 const Search = ({ value, onSearch, itemsDisplayed }) => {
     return (
-        <div
-            className="input-group col-md-4 mb-4"
-            style={searchBarStyle}>
+        <div className={`input-group col-md-4 mb-4 ${searchBar}`}>
             <div className="input-group-prepend">
                 <span className="input-group-text fa fa-search py-2">
                 </span>
@@ -23,7 +15,7 @@ const Search = ({ value, onSearch, itemsDisplayed }) => {
                 className="form-control"
                 placeholder="Search..."
                 onChange={onSearch} />
-            <div style={itemsStyle}>
+            <div className={items}>
                 {`${itemsDisplayed} items`}
             </div>
         </div>
