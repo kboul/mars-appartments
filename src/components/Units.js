@@ -9,10 +9,9 @@ import UserAvatar from './UserAvatar'
 import { getUnits } from '../services/unitsService'
 import { euro2Bitcoin } from '../utils/euro2Bitcoin'
 import { getUserImg, getUserName } from '../services/authService'
+import { cardStyle, cardBodyStyle, clickableCard }
+    from '../sass/Units.module.sass'
 
-const cardStyle = { border: '0px' }
-const cardBodyStyle = { padding: '0' }
-const clickableCard = { cursor: 'pointer' }
 const imgUrlPrefix = process.env.REACT_APP_IMG_URL_PREFIX
 
 class Units extends Component {
@@ -29,7 +28,6 @@ class Units extends Component {
         const userImg = getUserImg()
         const userName = getUserName()
         this.setState({ units: units.data, userImg, userName })
-        // console.log(this.state.units)
     }
 
     toggle = () => {
@@ -62,11 +60,9 @@ class Units extends Component {
         return (
             <div className="container-fluid">
                 <div className="d-flex justify-content-between mt-2 mb-4">
-                    <div>
-                        <MarsCircleHeader
-                            background="white"
-                            color="black" />
-                    </div>
+                    <MarsCircleHeader
+                        background="white"
+                        color="black" />
                     <UserAvatar
                         image={userImg}
                         name={userName} />
@@ -86,20 +82,15 @@ class Units extends Component {
                     {filteredUnits.map(({ id, pictures, name, region, description, cancellation, price, rating }) => {
                         return (
                             <div
-                                className="col-md-4"
+                                className={`col-md-4 ${clickableCard}`}
                                 key={id}
-                                onClick={() => this.handleClick(id)}
-                                style={clickableCard}>
-                                <div
-                                    className="card mb-4 box-shadow"
-                                    style={cardStyle}>
+                                onClick={() => this.handleClick(id)}>
+                                <div className={`card mb-4 box-shadow ${cardStyle}`}>
                                     <img
                                         className="card-img-top"
                                         src={`${imgUrlPrefix}/${pictures[1]}`}
                                         alt={`${imgUrlPrefix}/${pictures[1]}`} />
-                                    <div
-                                        className="card-body"
-                                        style={cardBodyStyle}>
+                                    <div className={`card-body ${cardBodyStyle}`}>
                                         <b>{name}</b>
                                         <div>{region}</div>
                                         <div className="card-text">
@@ -108,8 +99,7 @@ class Units extends Component {
                                         <div>{cancellation}</div>
                                         <Rating stars={rating} />
                                         <div className="card-text">
-                                            {/* <b>{(price / 5600).toFixed(2)} BTC</b> */}
-                                            <b> {euro2Bitcoin(price)}</b>
+                                            <b>{euro2Bitcoin(price)}</b>
                                         </div>
                                     </div>
                                 </div>
