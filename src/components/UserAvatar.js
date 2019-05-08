@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-const mediaBodyStyle = { paddingTop: '5px' }
+import { avatarName } from '../sass/UserAvatar.module.sass'
 
 const UserAvatar = ({ image, name }) => {
     return (
@@ -12,9 +11,7 @@ const UserAvatar = ({ image, name }) => {
                 src={image}
                 className="mr-2"
                 alt={image} />
-            <div
-                className="media-body"
-                style={mediaBodyStyle}>
+            <div className={`media-body ${avatarName}`}>
                 {name}
             </div>
         </div>
