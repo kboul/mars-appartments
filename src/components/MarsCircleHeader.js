@@ -4,7 +4,7 @@ import '../sass/MarsCircleHeader.sass'
 
 const MarsCircleHeader = ({ background, color }) => {
     return (
-        <b>Blueground on&nbsp
+        <b>Blueground on&nbsp;
             <span
                 className="circle"
                 style={{
