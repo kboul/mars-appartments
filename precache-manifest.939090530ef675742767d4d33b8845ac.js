@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "86aeb777d2d26331f6cf",
+    "revision": "492a39d19a6fb60d3eed",
     "url": "/mars-app/static/css/main.dd75ee04.chunk.css"
   },
   {
-    "revision": "86aeb777d2d26331f6cf",
-    "url": "/mars-app/static/js/main.4b9da029.chunk.js"
+    "revision": "492a39d19a6fb60d3eed",
+    "url": "/mars-app/static/js/main.9885bccf.chunk.js"
   },
   {
     "revision": "7c4d1f1dc6d3f5a2ac83",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/mars-app/static/media/fontawesome-webfont.912ec66d.svg"
   },
   {
-    "revision": "d2a9cd9352e8e9c3c62903779258048f",
+    "revision": "a26bc79637075ca0bceeb9336efb1837",
     "url": "/mars-app/index.html"
   }
 ];
