@@ -29,7 +29,7 @@ class Units extends Component {
         const userImg = getUserImg()
         const userName = getUserName()
         this.setState({ units: units.data, userImg, userName })
-        console.log(this.state.units)
+        // console.log(this.state.units)
     }
 
     toggle = () => {
