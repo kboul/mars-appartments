@@ -92,35 +92,37 @@ class Units extends Component {
                             return (
                                 <div
                                     className={`col-md-4 ${clickableCard}`}
-                                    key={id}
-                                    role="button"
-                                    tabIndex="0"
-                                    onKeyPress={() => {}}
-                                    onClick={() => this.handleClick(id)}>
-                                    <div
-                                        className={`card mb-4 box-shadow ${cardStyle}`}>
-                                        <img
-                                            className="card-img-top"
-                                            src={`${imgUrlPrefix}/${pictures[1]}`}
-                                            alt={`${imgUrlPrefix}/${pictures[1]}`}
-                                        />
+                                    key={id}>
+                                    <span
+                                        role="button"
+                                        tabIndex="-1"
+                                        onKeyPress={() => {}}
+                                        onClick={() => this.handleClick(id)}>
                                         <div
-                                            className={`card-body ${cardBodyStyle}`}>
-                                            <b>{name}</b>
-                                            <div>{region}</div>
-                                            <div className="card-text">
-                                                {`${description.substring(
-                                                    0,
-                                                    60
-                                                )}...`}
-                                            </div>
-                                            <div>{cancellation}</div>
-                                            <Rating stars={rating} />
-                                            <div className="card-text">
-                                                <b>{euro2Bitcoin(price)}</b>
+                                            className={`card mb-4 box-shadow ${cardStyle}`}>
+                                            <img
+                                                className="card-img-top"
+                                                src={`${imgUrlPrefix}/${pictures[1]}`}
+                                                alt={`${imgUrlPrefix}/${pictures[1]}`}
+                                            />
+                                            <div
+                                                className={`card-body ${cardBodyStyle}`}>
+                                                <b>{name}</b>
+                                                <div>{region}</div>
+                                                <div className="card-text">
+                                                    {`${description.substring(
+                                                        0,
+                                                        60
+                                                    )}...`}
+                                                </div>
+                                                <div>{cancellation}</div>
+                                                <Rating stars={rating} />
+                                                <div className="card-text">
+                                                    <b>{euro2Bitcoin(price)}</b>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </span>
                                 </div>
                             );
                         }
