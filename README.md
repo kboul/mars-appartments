@@ -10,6 +10,6 @@ Navigate to the root folder:
 npm install
 ```
 
-``` 
+```
 npm start
-``` 
+```

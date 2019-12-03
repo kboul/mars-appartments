@@ -4,7 +4,7 @@
     "private": true,
     "homepage": "https://kboul.github.io/mars-app",
     "dependencies": {
-        "axios": "^0.18.0",
+        "axios": "^0.18.1",
         "bootstrap": "^4.3.1",
         "font-awesome": "^4.7.0",
         "joi-browser": "^13.4.0",
@@ -16,7 +16,7 @@
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
         "react-router-dom": "^4.3.1",
-        "react-scripts": "^2.1.8",
+        "react-scripts": "^3.2.0",
         "react-stars": "^2.2.5",
         "reactstrap": "^6.5.0"
     },
@@ -38,12 +38,18 @@
         "not op_mini all"
     ],
     "devDependencies": {
-        "braces": "^3.0.2",
         "enzyme": "^3.9.0",
         "enzyme-adapter-react-16": "^1.12.1",
+        "eslint": "^6.1.0",
+        "eslint-config-airbnb": "^18.0.1",
+        "eslint-config-prettier": "^6.7.0",
+        "eslint-plugin-import": "^2.18.2",
+        "eslint-plugin-jsx-a11y": "^6.2.3",
+        "eslint-plugin-prettier": "^3.1.1",
+        "eslint-plugin-react": "^7.17.0",
+        "eslint-plugin-react-hooks": "^1.7.0",
         "gh-pages": "^2.0.1",
-        "handlebars": "^4.1.2",
         "js-yaml": "^3.13.1",
-        "tar": "^4.4.8"
+        "prettier": "^1.19.1"
     }
 }
