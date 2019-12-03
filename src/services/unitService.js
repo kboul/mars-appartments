@@ -1,8 +1,6 @@
-import http from '../services/httpService'
-import { getHeaders } from "./authService"
+import http from './httpService';
+import { getHeaders } from './authService';
 
-const apiEndpoint = '/units'
+const apiEndpoint = '/units';
 
-export function getUnit(id) {
-    return http.get(`${apiEndpoint}/${id}`, getHeaders())
-}
+export const getUnit = id => http.get(`${apiEndpoint}/${id}`, getHeaders());
