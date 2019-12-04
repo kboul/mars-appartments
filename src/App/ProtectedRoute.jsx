@@ -13,7 +13,7 @@ const ProtectedRoute = ({ path, component: Component, render, ...rest }) => {
                     return (
                         <Redirect
                             to={{
-                                pathname: '/signin',
+                                pathname: '/login',
                                 // eslint-disable-next-line react/prop-types
                                 state: { from: props.location }
                             }}

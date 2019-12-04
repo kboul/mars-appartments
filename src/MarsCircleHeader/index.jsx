@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../sass/MarsCircleHeader.sass';
+import './index.sass';
 
 const MarsCircleHeader = ({ background, color }) => {
     const style = {

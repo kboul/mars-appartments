@@ -1,7 +1,7 @@
 /* eslint-disable react/require-default-props */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { items, searchBar } from '../sass/Search.module.sass';
+import { items, searchBar } from './index.module.sass';
 
 const Search = ({ value, onSearch, itemsDisplayed }) => {
     return (

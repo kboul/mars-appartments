@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { avatarName } from '../sass/UserAvatar.module.sass';
+import { avatarName } from './index.module.sass';
 
 const UserAvatar = ({ image, name }) => {
     return (

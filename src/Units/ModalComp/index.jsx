@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal, ModalBody } from 'reactstrap';
 import PropTypes from 'prop-types';
-import '../sass/ModalComp.sass';
+import './index.sass';
 
 const ModalComp = ({ modal, toggle, children }) => {
     return (
