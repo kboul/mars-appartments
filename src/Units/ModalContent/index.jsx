@@ -2,10 +2,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import Rating from './Rating';
-import { getUnit } from '../services/unitService';
-import { euro2Bitcoin } from '../utils/euro2Bitcoin';
-import '../sass/ModalContent.sass';
+import Rating from '../Rating';
+import { getUnit } from './services';
+import { euro2Bitcoin } from '../utils';
+import './index.sass';
 
 const imgUrlPrefix = process.env.REACT_APP_IMG_URL_PREFIX;
 

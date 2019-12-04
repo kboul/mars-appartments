@@ -1,5 +1,5 @@
-import http from './httpService';
-import { getHeaders } from './authService';
+import http from '../services/httpService';
+import { getHeaders } from '../services/authService';
 
 const apiEndpoint = '/units';
 

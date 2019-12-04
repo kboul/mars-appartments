@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import MarsCircleHeader from './MarsCircleHeader';
+import MarsCircleHeader from '../MarsCircleHeader';
 import ModalComp from './ModalComp';
 import ModalContent from './ModalContent';
 import Rating from './Rating';
 import Search from './Search';
 import UserAvatar from './UserAvatar';
-import { getUnits } from '../services/unitsService';
-import { euro2Bitcoin } from '../utils/euro2Bitcoin';
+import { getUnits } from './services';
+import { euro2Bitcoin } from './utils';
 import { getUserImg, getUserName } from '../services/authService';
-import {
-    cardStyle,
-    cardBodyStyle,
-    clickableCard
-} from '../sass/Units.module.sass';
+import { cardStyle, cardBodyStyle, clickableCard } from './index.module.sass';
 
 const imgUrlPrefix = process.env.REACT_APP_IMG_URL_PREFIX;
 

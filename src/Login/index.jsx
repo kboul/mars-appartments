@@ -1,12 +1,12 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import Joi from 'joi-browser';
-import Form from '../common/Form';
+import Form from './Form';
 import { login, isUserLoggedIn } from '../services/authService';
-import MarsCircleHeader from './MarsCircleHeader';
-import '../sass/SignIn.sass';
+import MarsCircleHeader from '../MarsCircleHeader';
+import './index.sass';
 
-class SignIn extends Form {
+class Login extends Form {
     state = {
         data: {
             email: '',
@@ -36,7 +36,8 @@ class SignIn extends Form {
             const { data } = this.state;
             await login(data.email, data.password);
             // land to units view if successful
-            this.props.history.push('/units');
+            const { history } = this.props;
+            history.push('/units');
         } catch (ex) {
             if (ex.response && ex.response.status === 400) {
                 const { errors } = this.state;
@@ -68,7 +69,7 @@ class SignIn extends Form {
                             {this.renderInput('email', 'Email')}
                             {this.renderInput('password', 'Password')}
                             <div className="float-right">
-                                {this.renderButton('Sign In')}
+                                {this.renderButton('Login')}
                             </div>
                         </div>
                     </div>
@@ -78,4 +79,4 @@ class SignIn extends Form {
     }
 }
 
-export default SignIn;
+export default Login;
