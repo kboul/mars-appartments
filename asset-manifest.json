@@ -1,16 +1,25 @@
 {
-  "main.css": "/mars-app/static/css/main.dd75ee04.chunk.css",
-  "main.js": "/mars-app/static/js/main.9885bccf.chunk.js",
-  "main.js.map": "/mars-app/static/js/main.9885bccf.chunk.js.map",
-  "runtime~main.js": "/mars-app/static/js/runtime~main.b512b9ac.js",
-  "runtime~main.js.map": "/mars-app/static/js/runtime~main.b512b9ac.js.map",
-  "static/css/2.01feb47e.chunk.css": "/mars-app/static/css/2.01feb47e.chunk.css",
-  "static/js/2.c1a1be26.chunk.js": "/mars-app/static/js/2.c1a1be26.chunk.js",
-  "static/js/2.c1a1be26.chunk.js.map": "/mars-app/static/js/2.c1a1be26.chunk.js.map",
-  "index.html": "/mars-app/index.html",
-  "precache-manifest.95b518e9911bfab13151202ef17b1033.js": "/mars-app/precache-manifest.95b518e9911bfab13151202ef17b1033.js",
-  "service-worker.js": "/mars-app/service-worker.js",
-  "static/css/2.01feb47e.chunk.css.map": "/mars-app/static/css/2.01feb47e.chunk.css.map",
-  "static/css/main.dd75ee04.chunk.css.map": "/mars-app/static/css/main.dd75ee04.chunk.css.map",
-  "static/media/font-awesome.min.css": "/mars-app/static/media/fontawesome-webfont.fee66e71.woff"
+  "files": {
+    "main.css": "/mars-app/static/css/main.1c1f5936.chunk.css",
+    "main.js": "/mars-app/static/js/main.020b3fd9.chunk.js",
+    "main.js.map": "/mars-app/static/js/main.020b3fd9.chunk.js.map",
+    "runtime-main.js": "/mars-app/static/js/runtime-main.0f52e5c7.js",
+    "runtime-main.js.map": "/mars-app/static/js/runtime-main.0f52e5c7.js.map",
+    "static/css/2.2323ec8e.chunk.css": "/mars-app/static/css/2.2323ec8e.chunk.css",
+    "static/js/2.ec491f80.chunk.js": "/mars-app/static/js/2.ec491f80.chunk.js",
+    "static/js/2.ec491f80.chunk.js.map": "/mars-app/static/js/2.ec491f80.chunk.js.map",
+    "index.html": "/mars-app/index.html",
+    "precache-manifest.1f2f855de32ebeeb6ae129076828352d.js": "/mars-app/precache-manifest.1f2f855de32ebeeb6ae129076828352d.js",
+    "service-worker.js": "/mars-app/service-worker.js",
+    "static/css/2.2323ec8e.chunk.css.map": "/mars-app/static/css/2.2323ec8e.chunk.css.map",
+    "static/css/main.1c1f5936.chunk.css.map": "/mars-app/static/css/main.1c1f5936.chunk.css.map",
+    "static/media/font-awesome.min.css": "/mars-app/static/media/fontawesome-webfont.fee66e71.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0f52e5c7.js",
+    "static/css/2.2323ec8e.chunk.css",
+    "static/js/2.ec491f80.chunk.js",
+    "static/css/main.1c1f5936.chunk.css",
+    "static/js/main.020b3fd9.chunk.js"
+  ]
 }
