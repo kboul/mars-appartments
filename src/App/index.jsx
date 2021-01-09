@@ -1,10 +1,11 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import ProtectedRoute from './ProtectedRoute';
+
 import Login from '../Login';
+import ProtectedRoute from './ProtectedRoute';
 import Units from '../Units';
 
-const App = () => {
+export default function App() {
     return (
         <Switch>
             <ProtectedRoute path="/units/:id" component={Units} />
@@ -15,4 +16,3 @@ const App = () => {
     );
 };
 
-export default App;
