@@ -25,6 +25,17 @@
         "react/state-in-constructor": "off",
         "no-console": "off",
         "react/jsx-closing-bracket-location": "off",
-        "react/jsx-props-no-spreading": "off"
-    }
+        "react/jsx-props-no-spreading": "off",
+        "arrow-body-style": "off"
+    },
+    "overrides": [
+        {
+            "files": ["serviceWorker.js"],
+            "rules": {
+                "no-use-before-define": "off",
+                "spaced-comment": "off",
+                "no-param-reassign": "off"
+            }
+        }
+    ]
 }
