@@ -2,13 +2,10 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 
-import MarsCircleHeader from "../components/MarsCircleHeader";
+import { MarsCircleHeader, Rating, Search, UserAvatar } from "../components";
 import ModalComp from "./ModalComp";
 import ModalContent from "./ModalContent";
-import Rating from "./Rating";
-import Search from "./Search";
 import Styled from "./styles";
-import UserAvatar from "./UserAvatar";
 import { getUnits } from "./services";
 import { euro2Bitcoin } from "./utils";
 import { getUserImg, getUserName } from "../services/authService";

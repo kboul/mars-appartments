@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
-import Rating from "../Rating";
+import { Rating } from "../../components";
 import { getUnit } from "./services";
 import { euro2Bitcoin } from "../utils";
 import "./styles.css";
