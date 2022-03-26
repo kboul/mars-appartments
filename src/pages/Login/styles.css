@@ -1,0 +1,31 @@
+/* container center & height */
+.authenticate-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* card size */
+.form-authenticate {
+  width: 100%;
+  max-width: 400px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-authenticate .checkbox {
+  font-weight: 400;
+}
+
+.form-authenticate .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-authenticate .form-control:focus {
+  z-index: 2;
+}
