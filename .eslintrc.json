@@ -1,41 +1,41 @@
 {
-    "env": {
-        "browser": true,
-        "es6": true,
-        "jest": true
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "extends": ["eslint:recommended", "airbnb", "prettier"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": ["eslint:recommended", "airbnb", "prettier"],
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
-    "parser": "babel-eslint",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
-    "plugins": ["react", "prettier"],
-    "rules": {
-        "import/prefer-default-export": "off",
-        "react/jsx-indent": "off",
-        "react/jsx-indent-props": "off",
-        "react/state-in-constructor": "off",
-        "no-console": "off",
-        "react/jsx-closing-bracket-location": "off",
-        "react/jsx-props-no-spreading": "off",
-        "arrow-body-style": "off"
-    },
-    "overrides": [
-        {
-            "files": ["serviceWorker.js"],
-            "rules": {
-                "no-use-before-define": "off",
-                "spaced-comment": "off",
-                "no-param-reassign": "off"
-            }
-        }
-    ]
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "prettier"],
+  "rules": {
+    "import/prefer-default-export": "off",
+    "react/jsx-indent": "off",
+    "react/jsx-indent-props": "off",
+    "react/state-in-constructor": "off",
+    "no-console": "off",
+    "react/jsx-closing-bracket-location": "off",
+    "react/jsx-props-no-spreading": "off",
+    "arrow-body-style": "off"
+  },
+  "overrides": [
+    {
+      "files": ["serviceWorker.js"],
+      "rules": {
+        "no-use-before-define": "off",
+        "spaced-comment": "off",
+        "no-param-reassign": "off"
+      }
+    }
+  ]
 }

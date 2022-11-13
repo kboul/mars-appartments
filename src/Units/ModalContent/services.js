@@ -8,4 +8,4 @@ const apiEndpoint = '/units';
  * @param {string} id
  */
 
-export const getUnit = id => http.get(`${apiEndpoint}/${id}`, getHeaders());
+export const getUnit = (id) => http.get(`${apiEndpoint}/${id}`, getHeaders());

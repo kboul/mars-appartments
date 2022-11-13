@@ -7,30 +7,30 @@ const userImg = 'userImg';
 const userName = 'userName';
 
 export const login = async (email, password) => {
-    const { data } = await http.post(apiEndpoint, {
-        email,
-        password
-    });
-    localStorage.setItem(tokenKey, data.token.accessToken);
-    localStorage.setItem(userName, data.user.name);
-    localStorage.setItem(userImg, data.user.picture);
+  const { data } = await http.post(apiEndpoint, {
+    email,
+    password
+  });
+  localStorage.setItem(tokenKey, data.token.accessToken);
+  localStorage.setItem(userName, data.user.name);
+  localStorage.setItem(userImg, data.user.picture);
 };
 
 export const isUserLoggedIn = () => {
-    const jwt = localStorage.getItem(tokenKey);
+  const jwt = localStorage.getItem(tokenKey);
 
-    // if jwt is null stop => anonymous user
-    if (!jwt) return null;
+  // if jwt is null stop => anonymous user
+  if (!jwt) return null;
 
-    return jwtDecode(jwt);
+  return jwtDecode(jwt);
 };
 
 export const getJwt = () => localStorage.getItem(tokenKey);
 
 export const getHeaders = () => ({
-    headers: {
-        Authorization: `bearer ${getJwt()}`
-    }
+  headers: {
+    Authorization: `bearer ${getJwt()}`
+  }
 });
 
 export const getUserImg = () => localStorage.getItem(userImg);
@@ -38,10 +38,10 @@ export const getUserImg = () => localStorage.getItem(userImg);
 export const getUserName = () => localStorage.getItem(userName);
 
 export default {
-    login,
-    isUserLoggedIn,
-    getJwt,
-    getHeaders,
-    getUserImg,
-    getUserName
+  login,
+  isUserLoggedIn,
+  getJwt,
+  getHeaders,
+  getUserImg,
+  getUserName
 };
